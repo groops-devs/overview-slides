@@ -117,8 +117,9 @@
 
 					<section>
 						<h3>GOCO06s</h3>
-
-						<p>GOCO06s (<a href="https://doi.org/10.5194/essd-13-99-2021">Kvas et al. 2021</a>) is a satellite-only, global gravity field model up to degree and order 300, with secular and annual variations up to degree and order 200. It was produced by the GOCO Team (Technical University of Munich, University of Bonn, Graz University of Technology, Austrian Academy of Sciences, University of Bern) and is based on 1,160,000,000 observations from 19 satellites.</p>
+						<div class="slide-body">
+							<p>GOCO06s (<a href="https://doi.org/10.5194/essd-13-99-2021">Kvas et al. 2021</a>) is a satellite-only, global gravity field model up to degree and order 300, with secular and annual variations up to degree and order 200. It was produced by the GOCO Team (Technical University of Munich, University of Bonn, Graz University of Technology, Austrian Academy of Sciences, University of Bern) and is based on 1,160,000,000 observations from 19 satellites.</p>
+						</div>
 
 						<figure>
 							<img src="static/goco06s_01.png" width="25%">
@@ -126,29 +127,29 @@
 							<img src="static/goco06s_annual.png" width="25%">
 						</figure>
 
-
 					</section>
 
 					<section>
 						<h3>ITSG-Grace2018</h3>
 
-						<p>The ITSG-Grace2018 gravity field model (<a href="https://doi.org/10.1029/2019JB017415" target="_blank">Kvas et al. 2019</a>, <a href="http://doi.org/10.5880/ICGEM.2018.003" target="_blank">Mayer-Gürr et al. 2018</a>) is a GRACE only gravity field time series computed in Graz, providing unconstrained monthly and Kalman smoothed daily solutions. Since 2019,
-						GROOPS is also used to compute operational gravity field solution from GRACE Follow-On data.</p>
+						<div class="slide-body">
+							<p>The ITSG-Grace2018 gravity field model (<a href="https://doi.org/10.1029/2019JB017415" target="_blank">Kvas et al. 2019</a>, <a href="http://doi.org/10.5880/ICGEM.2018.003" target="_blank">Mayer-Gürr et al. 2018</a>) is a GRACE only gravity field time series computed in Graz, providing unconstrained monthly and Kalman smoothed daily solutions. Since 2019,
+							GROOPS is also used to compute operational gravity field solution from GRACE Follow-On data.</p>
 
-						<p>A tutorial for GRACE/GRACE-FO processing with GROOPS can be found in the <a href="https://groops-devs.github.io/groops/html/cookbook.gravityFieldGrace.html" target="_blank">Cookbook</a>.</p>
-
+							<p>A tutorial for GRACE/GRACE-FO processing with GROOPS can be found in the <a href="https://groops-devs.github.io/groops/html/cookbook.gravityFieldGrace.html" target="_blank">Cookbook</a>.</p>
+						</div>
 						<img src="static/mosaic.png">
 
 					</section>
 
 					<section>
 						<h3>Lunar Gravity Field</h3>
-
-						<p>GROOPS was used to compute the gravity field of the Moon from GRAIL radio science tracking and
-							inter-satellite measurements on the <a href="https://www.oeaw.ac.at/en/iwf/institute/infrastructure/high-performance-computer" target="_blank">LEO high-performance computer</a>
-  							of the Austrian Acedemy of Sciences. </p>
-						<p>The resulting model GrazLGM420b+ (<a href="https://doi.org/10.1016/j.icarus.2018.08.011" target="_blank">Wirnsberger et al. 2019</a>) is available on <a href="http://icgem.gfz-potsdam.de/getmodel/gfc/43d37bf3cd989ce670cd2375b725a69c974bed4a3d356faa88ffd47a8998902b/GrazLGM420b+.gfc" target="_blank">ICGEM</a>.</p>
-
+						<div class="slide-body">
+							<p>GROOPS was used to compute the gravity field of the Moon from GRAIL radio science tracking and
+								inter-satellite measurements on the <a href="https://www.oeaw.ac.at/en/iwf/institute/infrastructure/high-performance-computer" target="_blank">LEO high-performance computer</a>
+								of the Austrian Acedemy of Sciences. </p>
+							<p>The resulting model GrazLGM420b+ (<a href="https://doi.org/10.1016/j.icarus.2018.08.011" target="_blank">Wirnsberger et al. 2019</a>) is available on <a href="http://icgem.gfz-potsdam.de/getmodel/gfc/43d37bf3cd989ce670cd2375b725a69c974bed4a3d356faa88ffd47a8998902b/GrazLGM420b+.gfc" target="_blank">ICGEM</a>.</p>
+						</div>
 						<figure>
 							<img src="static/Free_air_gravity_anomaly in GrazLGM420b.png" width="75%">
 							<figcaption>Lunar free air anomalies from GrazLGM420b+.</figcaption>
@@ -158,11 +159,12 @@
 					<section>
 						<h3>Regional Geoid</h3>
 
-						<p>Next to global gravity field recovery from satellite data, GROOPS also supports the computation of local and regional gravity field models from
-							terrestrial data using radial basis functions. A detailed overview of the methodology is given in <a href="https://doi.org/10.1007/978-3-319-10837-7_19" target="_blank">Pock et al. 2012</a>.  </p>
+						<div class="slide-body">
+							<p>Next to global gravity field recovery from satellite data, GROOPS also supports the computation of local and regional gravity field models from
+								terrestrial data using radial basis functions. A detailed overview of the methodology is given in <a href="https://doi.org/10.1007/978-3-319-10837-7_19" target="_blank">Pock et al. 2012</a>.  </p>
 
-						<p>A step-by-step guide for regional geoid determination can be found in the <a href="https://groops-devs.github.io/groops/html/cookbook.regionalGeoid.html" target="_blank">GROOPS Cookbook</a>.</p>
-
+							<p>A step-by-step guide for regional geoid determination can be found in the <a href="https://groops-devs.github.io/groops/html/cookbook.regionalGeoid.html" target="_blank">GROOPS Cookbook</a>.</p>
+						</div>
 						<figure>
 							<img src="static/1_pro.png" width="50%">
 							<figcaption>Free air anomalies in Austria computed with GROOPS from terrestrial observations.</figcaption>
