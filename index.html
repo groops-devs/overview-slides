@@ -1,0 +1,382 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>GROOPS Overview Slides</title>
+		<link rel="icon" href="https://groops-devs.github.io/groops/html/static/groops_icon.png">
+
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/dist/reset.css" integrity="sha256-GqjoTJyry/5NlbGYef5IucLF5tVFdMvmebwi7bn+ErY=" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/dist/reveal.css" integrity="sha256-D+4fFDtnJGnOvyw3MKsmzNiTFHR7IY1mLz6vXv9Tr8A=" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/dist/theme/white.css" integrity="sha256-408oRloVmpK+B80Yai38FS2VBdxKlzgFkobhPC676+0=" crossorigin="anonymous" id="theme">
+
+		<style>
+			.reveal section div.slide-body {text-align: left;}
+			.reveal section h2 { font-size: 18pt; }
+			.reveal section h3 { font-size: 16pt; }
+			.reveal section p { font-size: 14pt; }
+			.reveal section p.tiny { font-size: 11pt; }
+			.reveal section li { font-size: 14pt; }
+			.reveal section .h3-fake { font-size: 16pt; font-weight: bold; }
+			.reveal section a.black { color: black;}
+			.reveal section figcaption { font-size: 10pt; }
+			.reveal section td { font-size: 16pt; }
+			.reveal section img { vertical-align: middle; }
+		</style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+                <section id="title_slide">
+                    <img src="https://github.com/groops-devs/groops/blob/main/docs/html/static/groops_banner.png?raw=True">
+
+					<div class="slide-body">
+						<p>The Gravity Recovery Object Oriented Programming System (GROOPS) is a software toolkit for tasks
+							like gravity field recovery, GNSS constellation and ground station processing, and satellite orbit determination.</p>
+
+						<p>The source code is <a href="https://www.gnu.org/licenses/gpl-3.0.en.html" target="_blank">GPL v3</a> licensed and available on <a href="https://github.com/groops-devs/groops" target="_blank">GitHub</a>.</p>
+
+						<table width="50%">
+							<tr>
+								<th>
+									<h3>Applications</h3>
+								</th>
+								<th>
+									<h3>Software Overview</h3>
+								</th>
+							</tr>
+							<tr>
+								<td>
+									<a href="#/applications"><img src="static/applications.png"></a>
+								</td>
+								<td>
+									<a href="#/software"><img src="https://github.com/groops-devs/groops/blob/main/docs/figures/gui_overview.png?raw=True"></a>
+								</td>
+							</tr>
+						</table>
+						<p class="tiny">Navigating the PICO: Use arrow keys or swipe to changes the slide. Pressing ESC shows an <a onclick="Reveal.toggleOverview();" href="#">overview</a> of all slides.</p>
+					</div>
+                </section>
+
+
+                <section id="applications">
+					<h2>Applications</h2>
+
+					<table width=75%>
+						<tr>
+							<td>Gravity Field Recovery</td>
+							<td>GNSS Processing</td>
+						</tr>
+						<tr>
+							<td><img src="static/degreeAmplitudes_GOCO06s.png"></td>
+							<td><img src="static/stationComparison_2015-10-02.png"></td>
+						</tr>
+					</table>
+					<table width=75%>
+						<tr>
+							<td>Kinematic Orbit Determination</td>
+							<td>Data Analysis</td>
+						</tr>
+						<tr>
+							<td><img src="static/diffOrbit-5svs30sClock.png"></td>
+							<td><img src="static/grace_antCentDifference_argumentOfLatitude.png"></td>
+						</tr>
+					</table>
+				</section>
+
+				<section id="gravity_field_recovery">
+					<section>
+						<h3>Gravity Field Recovery</h3>
+						<div class="slide-body">
+							<p>GROOPS has been extensively used for global and local gravity field recovery. Examples of gravity data sets produced by GROOPS include:</p>
+
+							<table>
+								<tr><td class="h3-fake">GOCO06s</td>
+								<td class="h3-fake">ITSG-Grace2018</td>
+								<td><h3>Lunar Gravity Field</h3></td>
+								<td><h3>Regional Geoid</h3></td></tr>
+								<tr>
+									<td width="25%">
+										<img src="static/goco06s.png">
+									</td>
+									<td width="25%">
+										<img src="static/mosaic.png">
+									</td>
+									<td width="25%">
+										<img src="static/Free_air_gravity_anomaly in GrazLGM420b.png">
+									</td>
+									<td width="25%">
+										<img src="static/1_pro.png">
+									</td>
+								</tr>
+							</table>
+						</div>
+					</section>
+
+					<section>
+						<h3>GOCO06s</h3>
+
+						<p>GOCO06s (<a href="https://doi.org/10.5194/essd-13-99-2021">Kvas et al. 2021</a>) is a satellite-only, global gravity field model up to degree and order 300, with secular and annual variations up to degree and order 200. It was produced by the GOCO Team (Technical University of Munich, University of Bonn, Graz University of Technology, Austrian Academy of Sciences, University of Bern) and is based on 1,160,000,000 observations from 19 satellites.</p>
+
+						<figure>
+							<img src="static/goco06s_01.png" width="25%">
+							<img src="static/goco06s_trend.png" width="25%">
+							<img src="static/goco06s_annual.png" width="25%">
+						</figure>
+
+
+					</section>
+
+					<section>
+						<h3>ITSG-Grace2018</h3>
+
+						<p>The ITSG-Grace2018 gravity field model (<a href="https://doi.org/10.1029/2019JB017415" target="_blank">Kvas et al. 2019</a>, <a href="http://doi.org/10.5880/ICGEM.2018.003" target="_blank">Mayer-Gürr et al. 2018</a>) is a GRACE only gravity field time series computed in Graz, providing unconstrained monthly and Kalman smoothed daily solutions. Since 2019,
+						GROOPS is also used to compute operational gravity field solution from GRACE Follow-On data.</p>
+
+						<p>A tutorial for GRACE/GRACE-FO processing with GROOPS can be found in the <a href="https://groops-devs.github.io/groops/html/cookbook.gravityFieldGrace.html" target="_blank">Cookbook</a>.</p>
+
+						<img src="static/mosaic.png">
+
+					</section>
+
+					<section>
+						<h3>Lunar Gravity Field</h3>
+
+						<p>GROOPS was used to compute the gravity field of the Moon from GRAIL radio science tracking and
+							inter-satellite measurements on the <a href="https://www.oeaw.ac.at/en/iwf/institute/infrastructure/high-performance-computer" target="_blank">LEO high-performance computer</a>
+  							of the Austrian Acedemy of Sciences. </p>
+						<p>The resulting model GrazLGM420b+ (<a href="https://doi.org/10.1016/j.icarus.2018.08.011" target="_blank">Wirnsberger et al. 2019</a>) is available on <a href="http://icgem.gfz-potsdam.de/getmodel/gfc/43d37bf3cd989ce670cd2375b725a69c974bed4a3d356faa88ffd47a8998902b/GrazLGM420b+.gfc" target="_blank">ICGEM</a>.</p>
+
+						<figure>
+							<img src="static/Free_air_gravity_anomaly in GrazLGM420b.png" width="75%">
+							<figcaption>Lunar free air anomalies from GrazLGM420b+.</figcaption>
+						</figure>
+					</section>
+
+					<section>
+						<h3>Regional Geoid</h3>
+
+						<p>Next to global gravity field recovery from satellite data, GROOPS also supports the computation of local and regional gravity field models from
+							terrestrial data using radial basis functions. A detailed overview of the methodology is given in <a href="https://doi.org/10.1007/978-3-319-10837-7_19" target="_blank">Pock et al. 2012</a>.  </p>
+
+						<p>A step-by-step guide for regional geoid determination can be found in the <a href="https://groops-devs.github.io/groops/html/cookbook.regionalGeoid.html" target="_blank">GROOPS Cookbook</a>.</p>
+
+						<figure>
+							<img src="static/1_pro.png" width="50%">
+							<figcaption>Free air anomalies in Austria computed with GROOPS from terrestrial observations.</figcaption>
+						</figure>
+
+					</section>
+				</section>
+
+				<section id="gnss_processing">
+					<section>
+						<h3>GNSS Processing</h3>
+
+						<p><a href="https://doi.org/10.1007/s00190-018-1223-2" traget="_blank">Strasser et al. 2019</a></p>
+					</section>
+
+					<section>
+						<h3>Satellite Orbits and Clocks</h3>
+
+						<a href="https://groops-devs.github.io/groops/html/cookbook.gnssNetwork.html" target="_blank">Cookbook</a>
+					</section>
+
+					<section>
+						<h3>Ground Station Networks</h3>
+
+						<a href="https://groops-devs.github.io/groops/html/cookbook.gnssNetwork.html" target="_blank">Cookbook</a>
+					</section>
+
+					<section>
+						<h3>Precise Point Positioning</h3>
+
+						<a href="https://groops-devs.github.io/groops/html/cookbook.gnssPpp.html" target="_blank">Cookbook</a>
+					</section>
+				</section>
+
+				<section id="kinematic_orbits">
+					<section>
+						<h3>Kinematic Orbit Determination</h3>
+						<p>GROOPS can be used to estimate high-quality kinematic orbits of low-Earth orbit (LEO) satellites from GNSS observations using the
+							raw observation approach (<a href="https://doi.org/10.1007/s00190-015-0872-7" target="_blank">Zehentner and Mayer-Gürr 2015</a>).
+							Kinematic orbits produced with GROOPS are, for example, used by the
+							<a href="https://earth.esa.int/web/guest/missions/esa-eo-missions/swarm/activities/scientific-projects/disc#MAGF" target="_blank">ESA SWARM DISC</a>
+							and the <a href="https://www.lrg.tum.de/iapg/forschung/schwerefeld/goco/" target="_blank">GOCO consortium</a> for gravity field recovery.
+						</p>
+						<p>Like most features of GROOPS, kinematic orbit processing is data agnostic, that is, once the required data and meta data is compiled, the processing steps are
+							independent of the satellite mission. So far kinematic orbits for 19 satellites including dedicated gravity missions like GRACE, GRACE-FO, CHAMP and GOCE but
+							also other LEO satellites like Jason-1/2/3, MetOp-A, Sentinel-1A/B, Sentinel-3A/B, Swarm-1/2/3, TanDEM-X, TerraSAR-X have been computed.
+						 </p>
+						<p>A step-by-step tutorial on how kinematic orbit determination works in GROOPS can be found in the <a href="https://groops-devs.github.io/groops/html/cookbook.kinematicOrbit.html" target="_blank">cookbook</a>.</p>
+
+						<figure>
+							<img src="static/grace2_orbitRms.png" width="50%">
+							<figcaption>
+								RMS of high-pass filtered differences between kinematic and dynamic orbit for GRACE-B
+							</figcaption>
+						</figure>
+
+
+					</section>
+
+
+					<section>
+						<h3>Estimation of Antenna Center Variations</h3>
+
+						<p>Antenna center variations (ACV) are a key criteria for high-quality kinematic orbits. GROOPS has the capability to estimate
+							time-variable ACVs for both code and phase observations.</p>
+
+						<table width="75%">
+							<tr>
+								<td>
+									<figure>
+										<img src="static/acv_grace1_occultation-off_0.png">
+										<figcaption>
+											GRACE-A ACV for C1C when no radio occultation is performed.
+										</figcaption>
+									</figure>
+								</td>
+								<td>
+									<figure>
+										<img src="static/acv_grace1_occultation-on_0.png">
+										<figcaption>
+											GRACE-A ACV for C1C when the radio occultation antenna is
+											switched on.
+										</figcaption>
+									</figure>
+								</td>
+							</tr>
+						</table>
+
+					</section>
+				</section>
+
+				<section id="data_analysis">
+					<section>
+						<h3>Data Pre- and Post-processing</h3>
+
+						<p>GROOPS is able to perform general data pre- and post-processing like outlier detection, resampling, detrending, and filtering of time series and spatial data.
+							Additionally, GROOPS offers statistical analysis, and spectral analysis in Fourier or wavelet domain.</p>
+						<p>Data sets can be transformed and visualized in different domains. Satellite observations, for example, can be mapped to the satellite ground track which
+							potentially reveals geographically correlated features.</p>
+
+						<p>A short example of data pre- and post-processing can be found in the <a href="https://groops-devs.github.io/groops/html/cookbook.instrument.html" target="_blank">cookbook</a>.</p>
+
+					</section>
+
+					<section>
+						<h3>Time Series Analysis</h3>
+					</section>
+
+					<section>
+						<h3>Spatial Statistics</h3>
+
+						<figure>
+							<img src="static/groundTrack.png">
+							<figcaption>
+								GRACE-A ACV for C1C when the radio occultation antenna is
+								switched on.
+							</figcaption>
+						</figure>
+
+					</section>
+
+					<section id="visualization">
+						<h3>Data Visualization</h3>
+
+						<p>Data visualization is realized through the Generic Mapping Tools (GMT, <a href="https://doi.org/10.1029/2019GC008515" target="_blank">Wessel et al. 2019</a>). GMT is not included in the source code, GROOPS rather generates shell or batch
+						   scripts which can be passed to the GMT executable.</p>
+						<p>Figures are composed via different layers which can be created and rearranged in the <a href="#/gui">GUI</a>. This makes is easy to
+						generate publication-quality figures.</p>
+					</section>
+				</section>
+
+				<section id="software">
+					<section>
+						<h2>Software Overview</h2>
+
+						<ul>
+							<li>User interaction with GROOPS is based on <a href="https://groops-devs.github.io/groops/html/general.configFiles.html">configuration files</a> typically generated in the <a href="#/gui">GUI</a></li>
+							<li>A configuration file represents a sequence of smaller tasks dubbed <it>programs</it></li>
+							<li>Programs are the building blocks for complex and flexible <a href="#/applications">processing chains</a></li>
+						</ul>
+					</section>
+
+					<section id="gui">
+						<h2>Graphical User Interface (GUI)</h2>
+
+						<p>The <a href="https://groops-devs.github.io/groops/html/general.gui.html">GROOPS GUI</a> offers a convenient way for generating configuration files.</p>
+					</section>
+
+					<section>
+						<h2>Portability</h2>
+
+						<p>GROOPS can be installed and run on all major platforms: Linux, Windows and MacOS</p>
+
+						<p>Installation guides for Windows and Linux are available on <a href="https://github.com/groops-devs/groops/blob/main/INSTALL.md">GitHub</a>.</p>
+
+					</section>
+
+					<section id="dependencies">
+						<h2>Dependencies</h2>
+
+						<p>While GROOPS is intended to be a standalone software	package, some functionality depends on external libraries.
+						   Hard dependencies are:</p>
+						<ul>
+							<li>Expat XML parser</li>
+							<li>IERS Software Collection</li>
+							<li>BLAS/LAPACK</li>
+						</ul>
+
+						<p>Additional libraries extend the feature set of GROOPS:</p>
+						<ul>
+							<li>NetCDF and zlib: for reading and writing NetCDF and compressed files</li>
+							<li>ERFA: for high-precision Earth rotation</li>
+						</ul>
+
+						<p>Parallel execution is realized throught the Message Passing Interface (MPI, Standard 3.0 or higher). Most GROOPS programs are implemented with
+							parallelization in mind. If an MPI implementation is present, the software can make use of mulitple cores on a single system,
+							or run on a distributed high-performance computing cluster.</p>
+
+						<p>The generic mapping tools (GMT) are used for <a href="#/visualization">data visualization</a>.</p>
+
+
+					</section>
+				</section>
+
+				<section id="references">
+					<h3>References</h3>
+
+					<p>Kvas, A., Brockmann, J. M., Krauss, S., Schubert, T., Gruber, T., Meyer, U., Mayer-Gürr, T., Schuh, W.-D., Jäggi, A., and Pail, R.: GOCO06s – a satellite-only global gravity field model, Earth Syst. Sci. Data, 13, 99–118, https://doi.org/10.5194/essd-13-99-2021, 2021.</p>
+
+					<p>Kvas, A., Behzadpour, S., Ellmer, M., Klinger, B., Strasser, S., Zehentner, N., & Mayer‐Gürr, T. (2019). ITSG‐Grace2018: Overview and evaluation of a new GRACE‐only gravity field time series. Journal of Geophysical Research: Solid Earth, 124, 9332– 9344. https://doi.org/10.1029/2019JB017415</p>
+
+					<p>Mayer-Gürr, Torsten; Behzadpur, Saniya; Ellmer, Matthias; Kvas, Andreas; Klinger, Beate; Strasser, Sebastian; Zehentner, Norbert (2018): ITSG-Grace2018 - Monthly, Daily and Static Gravity Field Solutions from GRACE. GFZ Data Services. https://doi.org/10.5880/ICGEM.2018.003</p>
+
+					<p>Wirnsberger, H., Krauss, S., & Mayer-Gürr, T. (2019). First independent Graz Lunar Gravity Model derived from GRAIL. Icarus, 317, 324–336. https://doi.org/https://doi.org/10.1016/j.icarus.2018.08.011</p>
+
+					<p>Pock, C., Mayer-Guerr, T., & Kuehtreiber, N. (2014). Consistent combination of satellite and terrestrial gravity field observations in regional geoid modeling: A case study for Austria. In U. Marti (Ed.), International Association of Geodesy Symposia (Vol. 141, pp. 151–156). Springer International Publishing. https://doi.org/10.1007/978-3-319-10837-7_19</p>
+
+					<p>Zehentner, N., Mayer-Gürr, T. Precise orbit determination based on raw GPS measurements. J Geod 90, 275–286 (2016). https://doi.org/10.1007/s00190-015-0872-7</p>
+
+					<p>Strasser, S., Mayer-Gürr, T. & Zehentner, N. Processing of GNSS constellations and ground station networks using the raw observation approach. J Geod 93, 1045–1057 (2019). https://doi.org/10.1007/s00190-018-1223-2</p>
+
+					<p>Wessel, P., Luis, J. F., Uieda, L., Scharroo, R., Wobbe, F., Smith, W. H. F., & Tian, D. (2019). The Generic Mapping Tools version 6. Geochemistry, Geophysics, Geosystems, 20, 5556– 5564. https://doi.org/10.1029/2019GC008515</p>
+
+				</section>
+
+			</div>
+		</div>
+
+		<script src="https://cdn.jsdelivr.net/npm/reveal.js@4.1.0/dist/reveal.min.js"></script>
+		<script>
+			Reveal.initialize({
+				hash: true,
+				plugins: []
+			});
+		</script>
+	</body>
+</html>
