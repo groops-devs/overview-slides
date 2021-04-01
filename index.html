@@ -176,26 +176,79 @@
 				<section id="gnss_processing">
 					<section>
 						<h3>GNSS Processing</h3>
+						<div class="slide-body">
+							<p>GNSS processing in GROOPS is based on an uncombined and undifferenced (raw) observation approach (<a href="https://doi.org/10.1007/s00190-018-1223-2" traget="_blank">Strasser et al. 2019</a>).</p>
+							<p>The contribution of Graz University of Technology (TUG) to the third reprocessing campaign (repro3) of the International GNSS Service (IGS) was computed with GROOPS. It comprises a time series of GNSS products, for example station positions and satellite orbits, covering the years 1994-2020.</p>
+						</div>
 
-						<p><a href="https://doi.org/10.1007/s00190-018-1223-2" traget="_blank">Strasser et al. 2019</a></p>
+
+
 					</section>
 
 					<section>
 						<h3>Satellite Orbits and Clocks</h3>
 
-						<a href="https://groops-devs.github.io/groops/html/cookbook.gnssNetwork.html" target="_blank">Cookbook</a>
+						<table>
+							<tr>
+								<td width=50%>
+									<figure>
+										<img src="static/orbitDiscontinuityRms_new.png">
+										<figcaption>
+											Median orbit midnight discontinuities of GROOPS derived satellite orbits for GPS, GLONASS and Galileo from 1994 to 2020.
+										</figcaption>
+									</figure>
+								</td>
+								<td>
+									<figure>
+										<img src="static/tug_orbitDiscontinuityRms2020.png">
+										<figcaption>
+											Orbit midnight discontinuity RMS per satellite for 2020.
+										</figcaption>
+									</figure>
+								</td>
+							</tr>
+						</table>
+
+						<p><a href="https://groops-devs.github.io/groops/html/cookbook.gnssNetwork.html" target="_blank">Cookbook</a></p>
 					</section>
 
 					<section>
 						<h3>Ground Station Networks</h3>
-
-						<a href="https://groops-devs.github.io/groops/html/cookbook.gnssNetwork.html" target="_blank">Cookbook</a>
+						<table>
+							<tr>
+								<td width=50%>
+									<figure>
+										<img src="static/stationCount.png">
+										<figcaption>
+											Number of processed stations and satellites per day from 1994 to 2020.
+										</figcaption>
+									</figure>
+								</td>
+								<td>
+									<figure>
+										<img src="static/stationComparison_2015-10-02.png">
+										<figcaption>
+											Displacements relative to ITRF2014 of a station network computed with GROOPS.
+										</figcaption>
+									</figure>
+								</td>
+							</tr>
+						</table>
 					</section>
 
 					<section>
 						<h3>Precise Point Positioning</h3>
-
-						<a href="https://groops-devs.github.io/groops/html/cookbook.gnssPpp.html" target="_blank">Cookbook</a>
+						<div class="slide-body">
+							<p>Next to global and regional networks and satellites orbits and clocks, GROOPS can also be used to perform
+								single-station Precise Point Positioning (PPP).</p>
+							<p>A step-by-step guide on how to set up PPP in GROOPS can be found in the <a href="https://groops-devs.github.io/groops/html/cookbook.gnssPpp.html" target="_blank">cookbook</a>.</p>
+						</div>
+						<figure>
+							<img src="static/positionTimeSeries.graz.png">
+							<figcaption>
+								Position and clock estimates for GRAZ using PPP.
+							</figcaption>
+						</figure>
 					</section>
 				</section>
 
