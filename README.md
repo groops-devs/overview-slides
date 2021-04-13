@@ -2,6 +2,7 @@
 
 This repository contains slides which give an overview of GROOPS and showcase applications and datasets computed with the software.
 
+The slides can be viewed on the [overview website](https://groops-devs.github.io/overview-slides).
 ## License
 
 This work is licensed under a
