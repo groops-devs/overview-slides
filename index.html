@@ -189,14 +189,11 @@
 							<p>The contribution of Graz University of Technology (TUG) to the third reprocessing campaign (repro3) of the International GNSS Service (IGS) was computed with GROOPS. It comprises a time series of GNSS products, for example station positions and satellite orbits, covering the years 1994-2020. PICO <a href="https://meetingorganizer.copernicus.org/EGU21/EGU21-2144.html" target="_blank">EGU21-2144</a> shows a thorough evaluation of the solution.
 							</p>
 						</div>
-
-
-
 					</section>
 
 					<section>
 						<h3>Satellite Orbits and Clocks</h3>
-
+						<p>GROOPS is capable of handling multi-GNSS constellations and can produce satellite data products like precise orbits, clocks, attitude and signal biases.</p>
 						<table>
 							<tr>
 								<td width=50%>
@@ -218,11 +215,12 @@
 							</tr>
 						</table>
 
-						<p><a href="https://groops-devs.github.io/groops/html/cookbook.gnssNetwork.html" target="_blank">Cookbook</a></p>
+						<p>A guide on how to compute GNSS constellations can be found in the <a href="https://groops-devs.github.io/groops/html/cookbook.gnssNetwork.html" target="_blank">Cookbook</a>.</p>
 					</section>
 
 					<section>
 						<h3>Ground Station Networks</h3>
+						<p>Next to GNSS constellations, GROOPS can compute large station networks to estimate station positions, station signal biases, clocks and troposphere parameters.</p>
 						<table>
 							<tr>
 								<td width=50%>
@@ -333,18 +331,66 @@
 
 					<section>
 						<h3>Time Series Analysis</h3>
+						<p>GROOPS supports various methods for the analysis of observation and model time series. These include spectral methods like
+							wavelet decomposition or Fourier transformation or the computation of different sample statistics.
+							Time series data can also be co-located with, for example, a satellite orbit to transform between different spatial representations and time domain.</p>
+
+						<table width="100%">
+							<tr>
+								<td>
+									<figure>
+										<img src="static/powerSpectrum_2019-01.png">
+										<figcaption>
+											GRACE-FO post-fit range rate residuals amplitude spectral density.
+										</figcaption>
+									</figure>
+								</td>
+								<td>
+									<figure>
+										<img src="static/scaleogram.png">
+										<figcaption>
+											Wavelet decomposition of GRACE-FO post-fit range rate residuals.
+										</figcaption>
+									</figure>
+								</td>
+								<td>
+									<figure>
+										<img src="static/historgram.png">
+										<figcaption>
+											Histogram of GRACE-FO range rate residuals.
+										</figcaption>
+									</figure>
+								</td>
+							</tr>
+						</table>
 					</section>
 
 					<section>
 						<h3>Spatial Statistics</h3>
+						<p>Similar as in time domain, GROOPS can analyize spatial or spatio-temporal data sets. In the example shown here we
+							gauge the noise in different GRACE solutions by computing the RMS in quiet ocean regions.
+						</p>
 
-						<figure>
-							<img src="static/groundTrack.png">
-							<figcaption>
-								GRACE-A ACV for C1C when the radio occultation antenna is
-								switched on.
-							</figcaption>
-						</figure>
+						<table width="100%">
+							<tr>
+								<td>
+									<figure>
+										<img src="static/930oceanRms_01timeSeries_rmsOcean.png">
+										<figcaption>
+											Quiet ocean RMS time series for different GRACE-FO solutions.
+										</figcaption>
+									</figure>
+								</td>
+								<td>
+									<figure>
+										<img src="static/930oceanRms_02_rmsGrid_ITSG.png">
+										<figcaption>
+											Gridded RMS for ITSG-Grace_operational GRACE-FO solution.
+										</figcaption>
+									</figure>
+								</td>
+							</tr>
+						</table>
 
 					</section>
 
@@ -362,17 +408,16 @@
 					<section>
 						<h2>Software Overview</h2>
 
-						<ul>
-							<li>User interaction with GROOPS is based on <a href="https://groops-devs.github.io/groops/html/general.configFiles.html">configuration files</a> typically generated in the <a href="#/gui">GUI</a></li>
-							<li>A configuration file represents a sequence of smaller tasks dubbed <it>programs</it></li>
-							<li>Programs are the building blocks for complex and flexible <a href="#/applications">processing chains</a></li>
-						</ul>
+						<p>GROOPS is written in C++, with the <a href="https://github.com/groops-devs/groops" target="_blank">Source Code</a> and <a href="https://groops-devs.github.io/groops/html/index.html" target="_blank">Documentation</a> hosted on GitHub.</p>
+
+						<p>User interaction with GROOPS is based on <a href="https://groops-devs.github.io/groops/html/general.configFiles.html">configuration files</a> typically generated in the <a href="#/gui">GUI</a>.
+							A configuration file represents a sequence of smaller tasks dubbed <it>programs</it>, which are building blocks for complex and flexible <a href="#/applications">processing chains</a>.</p>
 					</section>
 
 					<section id="gui">
 						<h2>Graphical User Interface (GUI)</h2>
-
-						<p>The <a href="https://groops-devs.github.io/groops/html/general.gui.html">GROOPS GUI</a> offers a convenient way for generating configuration files.</p>
+						<p>The <a href="https://groops-devs.github.io/groops/html/general.gui.html">GROOPS GUI</a> offers a convenient way for generating, managing and running configuration files.</p>
+						<img src="https://github.com/groops-devs/groops/blob/main/docs/figures/gui_overview.png?raw=True">
 					</section>
 
 					<section>
@@ -382,6 +427,8 @@
 
 						<p>Installation guides for Windows and Linux are available on <a href="https://github.com/groops-devs/groops/blob/main/INSTALL.md">GitHub</a>.</p>
 
+						<p>GROOPS can be installed on headless systems and has been run on multiple supercomputers of the <a href="https://prace-ri.eu/">PRACE</a>
+							association.</p>
 					</section>
 
 					<section id="dependencies">
@@ -429,9 +476,7 @@
 					<p>Strasser, S., Mayer-Gürr, T. & Zehentner, N. Processing of GNSS constellations and ground station networks using the raw observation approach. J Geod 93, 1045–1057 (2019). https://doi.org/10.1007/s00190-018-1223-2</p>
 
 					<p>Wessel, P., Luis, J. F., Uieda, L., Scharroo, R., Wobbe, F., Smith, W. H. F., & Tian, D. (2019). The Generic Mapping Tools version 6. Geochemistry, Geophysics, Geosystems, 20, 5556– 5564. https://doi.org/10.1029/2019GC008515</p>
-
 				</section>
-
 			</div>
 		</div>
 		<div id="license">
